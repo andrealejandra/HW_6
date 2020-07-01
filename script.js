@@ -5,7 +5,7 @@ $("#mainSearch").css({"border":"1px solid","border-radius":"4px"});
 //pre-loaded list of cities
 var searchedCities = ["Austin","South Padre Island","Laredo"];
 
-//makes buttons for array searchedCities-- only works when button is pushed
+//makes buttons for array searchedCities
 function renderButtons() {
     $("#buttons-view").empty();
 
@@ -19,7 +19,10 @@ function renderButtons() {
     }
 };
 
-//add click function to search button to trigger display fxn
+$(document).ready(".searchedCities");
+
+renderButtons();
+//add click function to search button to add new city to list
 
 $("#search").on("click",function(event){
     event.preventDefault();
@@ -27,30 +30,24 @@ $("#search").on("click",function(event){
     searchedCities.push(city);
     
     renderButtons();
-});
-
-$(document).ready(".searchedCities");
-
-renderButtons();
 
    var city = $(this).attr("data-city");
    var apiKey = "2e5935bfd47246927c6ef21356aed991";
 
    var queryURL = "https://www.api.openweathermap.org/data/2.5/weather?q="+ city +"&appid="+ apiKey;
 
-
 $.ajax({
     url: queryURL,
     method: "GET"
 }).then(function(response){
-
+    console.log(response);
     var weatherDash = $("<div class = 'mainSearch'>");
 
     var lat = response.coord.lat
     var lon = response.coord.lon
 
     var temp = response.main.temp;
-    weatherDash.append("Temperature: " + temp);
+    weatherDash.append("Temperature: "+ temp);
     var humid = response.main.humidity;
     weatherDash.append("Humidity: "+ humid);
     var wSpeed= response.wind.speed;
@@ -70,4 +67,5 @@ $.ajax({
     weatherDash.append(UV);
     }
 )
+});
 });
