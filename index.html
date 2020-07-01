@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+<title>Get the Weather!</title>
+</head>
+<header>
+    <div class="jumbotron">
+        <h1 class="display-3">Weather Dashboard</h1>
+</header>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+            Search for a City:
+                <form id="searchBox">
+                    <input type = "text" id="addCity">
+                    <span>
+                        <button type= "submit" id="search"><i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+                    </span>
+                    <div id="buttons-view">
+                    </div>
+                </form> 
+            </div>
+            <div class ="col-md-9">
+                <div class = "row" id= "mainSearch">
+                    <h4>main search</h4>
+                </div>
+                <div class = "row">
+                    <h4>5-Day Forecast:</h4>
+                </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title 1"></h5>
+                              <p class="card-text 1">
+                                <i class="icon"></i>
+                                  Temp:
+                                  <br>
+                                  Humidity:
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title 2"></h5>
+                              <p class="card-text 2">
+                                Temp:
+                                <br>
+                                Humidity: 
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
